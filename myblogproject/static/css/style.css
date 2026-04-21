@@ -1,0 +1,106 @@
+        body{
+            margin:0;
+            font-family: Arial, Helvetica, sans-serif;
+            background:#fdfdfd;
+        }
+
+        /* Navbar */
+        .navbar{
+            background:#333;
+            padding:10px 20px;
+            display:flex;
+            align-items:center;
+            color:white;
+        }
+
+        .navbar a{
+            text-decoration:none;
+            color:white;
+            padding:8px 12px;
+            transition:0.3s;
+        }
+
+        .navbar a:hover{
+            background:#555;
+            border-radius:4px;
+        }
+
+        /* Dropdown */
+        .dropdown{
+            position:relative;
+            display:inline-block;
+        }
+
+        .dropdown-content{
+            display:none;
+            position:absolute;
+            background:#444;
+            min-width:140px;
+            box-shadow:0 2px 5px rgba(0,0,0,0.2);
+            z-index:1000;
+        }
+
+        .dropdown-content a{
+            display:block;
+            padding:10px;
+            color:white;
+        }
+
+        .dropdown-content a:hover{
+            background:#666;
+        }
+
+        .dropdown:hover .dropdown-content{
+            display:block;
+        }
+
+        /* Search */
+        .search-box{
+            margin-left:auto;
+            display:flex;
+            align-items:center;
+        }
+
+        .search-box input{
+            padding:6px;
+            border:none;
+            border-radius:4px;
+        }
+
+        .search-box button{
+            padding:6px 12px;
+            margin-left:5px;
+            border:none;
+            background:#ff6600;
+            color:white;
+            border-radius:4px;
+            cursor:pointer;
+        }
+
+        .search-box button:hover{
+            background:#e65c00;
+        }
+
+        /* Footer */
+        footer{
+            background:#222;
+            color:#ccc;
+            text-align:center;
+            padding:20px;
+            margin-top:40px;
+        }
+
+        footer a{
+            color:#ff6600;
+            text-decoration:none;
+            margin:0 8px;
+        }
+
+        footer a:hover{
+            text-decoration:underline;
+        }
+
+        .footer-social{
+            margin-top:10px;
+        }
+    

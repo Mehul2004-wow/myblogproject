@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f4f7fb;
+            --card: #ffffff;
+            --border: #e5e7eb;
+
+            --primary: #4f46e5;
+            --primary-light: #eef2ff;
+
+            --text: #111827;
+            --muted: #6b7280;
+
+            --radius: 14px;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .register-container {
+            background: var(--card);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 420px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--text);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        form p {
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        input {
+            width: 100%;
+            padding: 11px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: #fff;
+            font-size: 0.9rem;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        input:focus {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        button {
+            width: 100%;
+            margin-top: 12px;
+            padding: 12px;
+            border-radius: 999px;
+            border: none;
+            background: var(--primary);
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(79,70,229,0.25);
+        }
+
+        .login-link {
+            margin-top: 18px;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .login-link a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        .result {
+            margin-top: 14px;
+            font-size: 0.8rem;
+            color: #ef4444;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <h2>Create Account</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <p>
+                <label>Name</label>
+                <input type="text" name="name" required>
+            </p>
+
+            <p>
+                <label>Username</label>
+                <input type="text" name="username" required>
+            </p>
+
+            <p>
+                <label>Mobile No</label>
+                <input type="text" name="mobile" required>
+            </p>
+
+            <p>
+                <label>Password</label>
+                <input type="password" name="password" required>
+            </p>
+
+            <p>
+                <label>Re-Password</label>
+                <input type="password" name="repassword" required>
+            </p>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <div class="login-link">
+            Already have an account?
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+
+        <p class="result">{{ context.result }}</p>
+    </div>
+</body>
+</html>

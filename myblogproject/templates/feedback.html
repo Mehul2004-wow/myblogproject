@@ -1,0 +1,118 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+        }
+
+        .success {
+            margin-top: 15px;
+            color: green;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Feedback Form</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <!-- Name -->
+        <label for="id_name">Name</label>
+        {{ form.name }}
+        <div class="error">{{ form.name.errors }}</div>
+
+        <!-- Email -->
+        <label for="id_email">Email</label>
+        {{ form.email }}
+        <div class="error">{{ form.email.errors }}</div>
+
+        <!-- Rating -->
+        <label for="id_rating">Rating (1-5)</label>
+        {{ form.rating }}
+        <div class="error">{{ form.rating.errors }}</div>
+
+        <!-- Feedback -->
+        <label for="id_feedback">Feedback</label>
+        {{ form.feedback }}
+        <div class="error">{{ form.feedback.errors }}</div>
+
+        <button type="submit" class="btn">Submit</button>
+    </form>
+
+    {% if data %}
+        <div class="success">
+            Thank you! Your feedback has been submitted.
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
+```

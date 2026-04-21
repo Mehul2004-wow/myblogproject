@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}MiniBlog|Post Details{% endblock %}
+{% block content %}
+<h2>Blog Titles</h2>
+{% for title in Title %}
+    {% if title.recent %}
+        <li style="color: brown; font-size : large;">{{title.title}}</li>
+    {% else %}
+        <li>{{title.title}}</li>
+    {% endif %}
+{% endfor %}
+{% endblock %}

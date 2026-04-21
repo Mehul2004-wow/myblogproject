@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Blog Post Details</h1>
+    <h2>Blog Author : {{Blog_author}}</h2>
+    <h3>Post Title : {{post_title}}</h3>
+    <h3>Formated Post Title : {{post_title|upper}}</h3>
+    <h3>Date : {{date}}</h3>
+    <h3>Formated Date : {{date|date:"D , d m y"}}</h3>
+{% endblock %}
